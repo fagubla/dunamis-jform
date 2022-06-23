@@ -46,6 +46,7 @@ const controlRenderer = defineComponent({
     ...rendererProps<ControlElement>(),
   },
   setup(props: RendererProps<ControlElement>) {
+    debugger;
     return {
       ...useVuetifyControl(
         useJsonFormsControl(props),
@@ -54,6 +55,12 @@ const controlRenderer = defineComponent({
       ...{
         editorSettings: {
           inline: true,
+          plugins: 'code',
+          toolbar:
+            'undo redo format | formatselect | ' +
+            'bold italic backcolor forecolor | alignleft aligncenter ' +
+            'alignright alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | code',
           menubar: false,
         },
       },
